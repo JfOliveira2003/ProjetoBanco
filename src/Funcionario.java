@@ -1,12 +1,13 @@
 public class Funcionario {
     private String nome;
+    private Data dataNascimento = new Data();
     private String departamento;
     private double salario;
     private boolean ativo;
 
 
     public void aumentarSalario(double valor){
-
+        this.salario += valor;
     }
     public void demitir(){
         this.ativo = false;
@@ -29,5 +30,14 @@ public class Funcionario {
     }
     public double GetSalario(){
         return this.salario;
+    }
+    public boolean IsAtivo(){
+        return this.ativo;
+    }
+    public Data getDataNascimento(){
+        return this.dataNascimento;
+    }
+    public String mostraDados(){
+        return this.GetNome() + " " + this.GetDepartamento();
     }
 }
